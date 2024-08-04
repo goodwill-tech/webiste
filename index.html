@@ -14,12 +14,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             min-height: 100vh;
             text-align: center;
             padding-top: 150px; /* Margin at the top */
             box-sizing: border-box;
-            overflow: hidden; /* Hide overflow during animation */
+            overflow-x: hidden; /* Hide horizontal overflow */
         }
 
         .content {
@@ -29,6 +29,7 @@
             justify-content: center;
             width: 100%;
             animation: fadeInUp 1s ease-out forwards; /* Apply animation */
+            padding-bottom: 120px; /* Ensure space for footer */
         }
 
         @keyframes fadeInUp {
