@@ -3,116 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goodwill Technologies</title>
+    <title>Goodwi.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
-            overflow: hidden; /* Hide scrollbars */
-        }
-        .header {
-            background: #00264d;
-            color: #fff;
-            padding: 10px 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to top, #000d36, #0b0086);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
             text-align: center;
+            padding-top: 150px; /* Margin at the top */
+            box-sizing: border-box;
+            overflow: hidden; /* Hide overflow during animation */
         }
-        .header img {
-            width: 100px;
-            vertical-align: middle;
-        }
-        .hero {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            height: 100%;
-            background: url('animation.gif') no-repeat center center/cover; /* Replace 'animation.gif' with your animation file */
-            transition: background 0.5s ease-in-out;
+            animation: fadeInUp 1s ease-out forwards; /* Apply animation */
         }
-        .hero:hover::before {
-            background: url('animation-hover.gif') no-repeat center center/cover; /* Replace 'animation-hover.gif' with your hover animation file */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .hero h1 {
-            position: relative;
-            font-size: 2.5em;
-            margin: 0;
-            padding-top: 20%;
+
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            z-index: 10; /* Ensure header is above other content */
         }
-        .hero p {
-            position: relative;
-            font-size: 1.2em;
+
+        h1 {
+            font-size: 51px;
+            margin: 1em 0;
+            font-family: 'Inter', sans-serif;
         }
-        .section {
-            padding: 20px;
-            text-align: center;
+
+        p {
+            font-size: 24px;
+            margin: 1.5em 0;
+            color: #D1D1D1;
         }
-        .projects {
-            background: #fff;
-            margin: 20px 0;
+
+        .join-waitlist {
+            margin: 2em 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .contact {
-            background: #e2e2e2;
-            padding: 20px;
+
+        .join-waitlist button {
+            box-sizing: border-box;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-shadow: 0px 0.7px 0.7px -0.6px rgba(0, 0, 0, 0.15), 
+                        0px 1.8px 1.8px -1.2px rgba(0, 0, 0, 0.144), 
+                        0px 3.6px 3.6px -1.9px rgba(0, 0, 0, 0.138), 
+                        0px 6.9px 6.9px -2.5px rgba(0, 0, 0, 0.127), 
+                        0px 13.6px 13.6px -3.1px rgba(0, 0, 0, 0.105), 
+                        0px 30px 30px -3.8px rgba(0, 0, 0, 0.05);
+            background-color: #222222;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            overflow: visible;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
         }
+
+        .logo {
+            margin-top: 2em;
+        }
+
         .footer {
-            background: #00264d;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.92);
+            overflow: visible;
+            align-content: center;
+            flex-wrap: nowrap;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            border-radius: 0px 0px 0px 0px;
+            z-index: 10; /* Ensure footer is above other content */
         }
+
+        .footer p, .footer a {
+            margin: 0;
+            font-size: 0.8em;
+        }
+
         .footer a {
-            color: #fff;
+            color: white;
             text-decoration: none;
         }
+
         .footer a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .join-waitlist button {
+                font-size: 0.8em;
+                padding: 10px;
+            }
+
+            .footer {
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .join-waitlist button {
+                font-size: 0.7em;
+                padding: 8px;
+            }
+
+            .footer {
+                padding: 5px 10px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header class="header">
-        <img src="https://home.iitk.ac.in/~kamalkk/Main_files/logo_black.png" alt="IIT Kanpur Logo">
-        <h1>Goodwill Technologies</h1>
-    </header>
-
-    <section class="section">
-        <h1>Solving Problems from the grassroots</h1>
-        <p>Developed by Engineers from IIT Kanpur</p>
-    </section>
-
-    <section class="section">
-        <h2>About Us</h2>
-        <p>Goodwill Technologies is dedicated to providing innovative solutions to tackle real-world problems. Our team, composed of skilled engineers from IIT Kanpur, is committed to excellence and cutting-edge technology.</p>
-    </section>
-
-
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <input type="submit" value="Send">
-        </form>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2024 Goodwill Technologies. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </footer>
-
+    <div class="header">Goodwi.</div>
+    <div class="content">
+        <h1>Solving problems from the grassroots</h1>
+        <p>Making the life of next billion users easier with good intent</p>
+        <div class="join-waitlist">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCWcqfrITojIfR5e9-4csxP-7UgfbWf9b8WSnTAZBMJJI6jA/viewform?usp=sf_link" target="_blank"><button>Join Waitlist</button></a>
+        </div>
+        <p>Built by engineers from IIT KANPUR</p>
+        <div class="logo">
+            <img src="assets/IIT_Kanpur_Logo 1.svg" alt="IIT Kanpur Logo" width="100">
+        </div>
+    </div>
+    <div class="footer">
+        <p>© Goodwill Technologies Inc. 2024</p>
+        <a href="mailto:goodwi.tech@gmail.com">Email</a>
+    </div>
 </body>
 </html>
