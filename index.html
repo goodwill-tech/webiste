@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodwill Technologies</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            overflow: hidden; /* Hide scrollbars */
+        }
+        .header {
+            background: #00264d;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .header img {
+            width: 100px;
+            vertical-align: middle;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('animation.gif') no-repeat center center/cover; /* Replace 'animation.gif' with your animation file */
+            transition: background 0.5s ease-in-out;
+        }
+        .hero:hover::before {
+            background: url('animation-hover.gif') no-repeat center center/cover; /* Replace 'animation-hover.gif' with your hover animation file */
+        }
+        .hero h1 {
+            position: relative;
+            font-size: 2.5em;
+            margin: 0;
+            padding-top: 20%;
+        }
+        .hero p {
+            position: relative;
+            font-size: 1.2em;
+        }
+        .section {
+            padding: 20px;
+            text-align: center;
+        }
+        .projects {
+            background: #fff;
+            margin: 20px 0;
+        }
+        .contact {
+            background: #e2e2e2;
+            padding: 20px;
+        }
+        .footer {
+            background: #00264d;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="https://home.iitk.ac.in/~kamalkk/Main_files/logo_black.png" alt="IIT Kanpur Logo">
+        <h1>Goodwill Technologies</h1>
+    </header>
+
+    <section class="section">
+        <h1>Solving Problems from the grassroots</h1>
+        <p>Developed by Engineers from IIT Kanpur</p>
+    </section>
+
+    <section class="section">
+        <h2>About Us</h2>
+        <p>Goodwill Technologies is dedicated to providing innovative solutions to tackle real-world problems. Our team, composed of skilled engineers from IIT Kanpur, is committed to excellence and cutting-edge technology.</p>
+    </section>
+
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Goodwill Technologies. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
